@@ -1,1 +1,11 @@
-
+pipeline {
+  agent any
+  stages {
+   
+    stage('Build') {
+      steps { 
+        sh 'cd && cd terraform-prometheus/ && terraform apply -auto-approve && sleep 2m' 
+      }
+    }
+  }
+}
